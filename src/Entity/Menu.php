@@ -40,7 +40,7 @@ class Menu
     private $photo;
 
     /**
-     * @ORM\OneToMany(targetEntity=catfood::class, mappedBy="menu")
+     * @ORM\OneToMany(targetEntity=Catfood::class, mappedBy="menu")
      */
     private $catfood;
 

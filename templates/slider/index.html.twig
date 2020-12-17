@@ -1,0 +1,41 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<div style="padding-top: 8em;">
+    <h1 class="text-warning">Slider</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Message</th>
+                <th>Source_image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for slider in sliders %}
+            <tr>
+                <td>{{ slider.id }}</td>
+                <td>{{ slider.titre }}</td>
+                <td>{{ slider.message }}</td>
+                <td>{{ slider.SourceImage }}</td>
+                <td>
+                    <a href="{{ path('slider_show', {'id': slider.id}) }}">show</a>
+                    <a href="{{ path('slider_edit', {'id': slider.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('slider_new') }}">Create new</a>
+</div>
+{% endblock %}

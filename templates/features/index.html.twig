@@ -1,0 +1,41 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+<div style="padding-top: 8em;">
+    <h1 class="text-warning">Features</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Icone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for feature in features %}
+            <tr>
+                <td>{{ feature.id }}</td>
+                <td>{{ feature.titre }}</td>
+                <td>{{ feature.Description }}</td>
+                <td>{{ feature.icone }}</td>
+                <td>
+                    <a href="{{ path('features_show', {'id': feature.id}) }}">show</a>
+                    <a href="{{ path('features_edit', {'id': feature.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('features_new') }}">Create new</a>
+</div>
+{% endblock %}
