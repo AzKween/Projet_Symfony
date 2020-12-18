@@ -13,7 +13,6 @@ class BlogcategoryType extends AbstractType
     {
         $builder
             ->add('rubrique')
-            ->add('blogs')
         ;
     }
 

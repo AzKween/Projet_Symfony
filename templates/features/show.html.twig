@@ -1,9 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.admin.html.twig' %}
 
-{% block title %}Features{% endblock %}
+{% block title %}Admin{% endblock %}
 
 {% block body %}
-    <h1>Features</h1>
+<div style="padding-top: 8em;">
+    <h1 class="text-warning">Features</h1>
 
     <table class="table">
         <tbody>
@@ -31,4 +32,5 @@
     <a href="{{ path('features_edit', {'id': feature.id}) }}">edit</a>
 
     {{ include('features/_delete_form.html.twig') }}
+</div>
 {% endblock %}

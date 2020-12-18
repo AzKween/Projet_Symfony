@@ -6,6 +6,7 @@ use App\Entity\Slider;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class SliderType extends AbstractType
 {
@@ -14,7 +15,9 @@ class SliderType extends AbstractType
         $builder
             ->add('titre')
             ->add('message')
-            ->add('Source_image')
+            ->add('imageFile', FileType::class, [
+                'required' => true
+            ]);
         ;
     }
 

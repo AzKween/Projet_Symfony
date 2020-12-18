@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.admin.html.twig' %}
 
-{% block title %}New Review{% endblock %}
+{% block title %}Admin{% endblock %}
 
 {% block body %}
-    <h1>Create new Review</h1>
+<div style="padding-top: 8em;">
+    <h1 class="text-warning">Create new Review</h1>
 
     {{ include('review/_form.html.twig') }}
 
     <a href="{{ path('review_index') }}">back to list</a>
+</div>
 {% endblock %}

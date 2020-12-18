@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.admin.html.twig' %}
 
-{% block title %}New Features{% endblock %}
+{% block title %}Admin{% endblock %}
 
 {% block body %}
-    <h1>Create new Features</h1>
+<div style="padding-top: 8em;">
+    <h1 class="text-warning">Create new Features</h1>
 
     {{ include('features/_form.html.twig') }}
 
     <a href="{{ path('features_index') }}">back to list</a>
+</div>
 {% endblock %}
